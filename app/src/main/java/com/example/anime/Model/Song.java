@@ -1,9 +1,12 @@
 package com.example.anime.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Song {
+public class Song implements Parcelable {
 
 @SerializedName("id")
 @Expose
@@ -57,7 +60,35 @@ private Object album;
 @Expose
 private Object favorite;
 
-public Integer getId() {
+    protected Song(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        title = in.readString();
+        genre = in.readString();
+        vocal = in.readString();
+        country = in.readString();
+        description = in.readString();
+        songAddress = in.readString();
+        lyric = in.readString();
+        avatar = in.readString();
+    }
+
+    public static final Creator<Song> CREATOR = new Creator<Song>() {
+        @Override
+        public Song createFromParcel(Parcel in) {
+            return new Song(in);
+        }
+
+        @Override
+        public Song[] newArray(int size) {
+            return new Song[size];
+        }
+    };
+
+    public Integer getId() {
 return id;
 }
 
@@ -193,4 +224,26 @@ public void setFavorite(Object favorite) {
 this.favorite = favorite;
 }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id);
+        }
+        dest.writeString(title);
+        dest.writeString(genre);
+        dest.writeString(vocal);
+        dest.writeString(country);
+        dest.writeString(description);
+        dest.writeString(songAddress);
+        dest.writeString(lyric);
+        dest.writeString(avatar);
+    }
 }
