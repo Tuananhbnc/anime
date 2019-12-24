@@ -86,8 +86,8 @@ public class PlaymusicActivity extends AppCompatActivity {
         fragment_play_list_song = new Fragment_Play_list_song();
 
         adapternhac = new ViewPagerPlaylistMusic(getSupportFragmentManager());
-        adapternhac.addFragment(fragment_play_list_music_disc);
         adapternhac.addFragment(fragment_play_list_song);
+        adapternhac.addFragment(fragment_play_list_music_disc);
         viewPagerplaynhac.setAdapter(adapternhac);
 
     }
