@@ -13,6 +13,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anime.Adapter.ViewPagerPlaylistMusic;
+import com.example.anime.Fragment.Fragment_Play_list_music_disc;
+import com.example.anime.Fragment.Fragment_Play_list_song;
 import com.example.anime.Model.Song;
 import com.example.anime.R;
 
@@ -26,6 +29,9 @@ public class PlaymusicActivity extends AppCompatActivity {
     ImageButton imgplay, imgrepeat, imgnext, imgpre, imgrandom;
     ViewPager viewPagerplaynhac;
     public static ArrayList<Song> mangbaihat = new ArrayList<>();
+    public static ViewPagerPlaylistMusic adapternhac;
+    Fragment_Play_list_music_disc fragment_play_list_music_disc;
+    Fragment_Play_list_song fragment_play_list_song;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,5 +80,15 @@ public class PlaymusicActivity extends AppCompatActivity {
             }
         });
         toolbarplaynhac.setTitleTextColor(Color.WHITE);
+
+        //
+        fragment_play_list_music_disc = new Fragment_Play_list_music_disc();
+        fragment_play_list_song = new Fragment_Play_list_song();
+
+        adapternhac = new ViewPagerPlaylistMusic(getSupportFragmentManager());
+        adapternhac.addFragment(fragment_play_list_music_disc);
+        adapternhac.addFragment(fragment_play_list_song);
+        viewPagerplaynhac.setAdapter(adapternhac);
+
     }
 }
