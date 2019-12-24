@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.example.anime.Model.Song;
 import com.example.anime.R;
 
+import java.util.ArrayList;
+
 public class PlaymusicActivity extends AppCompatActivity {
 
     Toolbar toolbarplaynhac;
@@ -23,20 +25,33 @@ public class PlaymusicActivity extends AppCompatActivity {
     SeekBar sktime;
     ImageButton imgplay, imgrepeat, imgnext, imgpre, imgrandom;
     ViewPager viewPagerplaynhac;
+    public static ArrayList<Song> mangbaihat = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playmusic);
         init();
+        GetDataFromIntent();
 
+
+    }
+
+    private void GetDataFromIntent() {
         // floating action
         Intent intent = getIntent();
-        if(intent.hasExtra("song")){
-            Song song = intent.getParcelableExtra("song");
-            Toast.makeText(this, song.getTitle(), Toast.LENGTH_SHORT).show();
+        mangbaihat.clear();
+        if(intent != null){
+            if(intent.hasExtra("song")){
+                Song song = intent.getParcelableExtra("song");
+                Toast.makeText(this, song.getTitle(), Toast.LENGTH_SHORT).show();
+                mangbaihat.add(song);
+            }
+            if(intent.hasExtra("cacbaihat")){
+                ArrayList<Song> bahatArrayList = intent.getParcelableArrayListExtra("cacbaihat");
+                mangbaihat = bahatArrayList;
+            }
         }
-
     }
 
     private void init() {
