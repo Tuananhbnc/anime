@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_collapseMode="pin"
+        android:id="@+id/toolbar_search"
+        android:elevation="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logoAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_actionbar_user"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/myViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/myTabLayout"
+        app:tabIndicatorColor="#CF3FE4"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#CF3FE4"
+        app:tabTextColor="#000000"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.google.android.material.tabs.TabLayout>
+</LinearLayout>

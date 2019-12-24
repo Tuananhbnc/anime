@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:padding="7dp"
+        android:id="@+id/relative_Playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:id="@+id/textviewtitle_Playlist"
+            android:text="PlayList Trong Ngày"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/relative_Playlist"
+        android:id="@+id/recyclerview_Playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:padding="7dp"
+        android:layout_below="@id/recyclerview_Playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textviewxemthem_Playlist"
+            android:textColor="#913677"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="Xem thêm >"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

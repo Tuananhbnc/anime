@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">anime</string>
+
+    <!--Menu Item-->
+    <string name="menu_item_search">Search</string>
+    <string name="menu_item_setting">Setting</string>
+    <string name="menu_item_Logout">Đăng xuất</string>
+
+</resources>
