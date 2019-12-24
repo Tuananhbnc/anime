@@ -50,7 +50,7 @@ public class PlaymusicActivity extends AppCompatActivity {
         if(intent != null){
             if(intent.hasExtra("song")){
                 Song song = intent.getParcelableExtra("song");
-                Toast.makeText(this, song.getTitle(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, song.getTitle(), Toast.LENGTH_SHORT).show();
                 mangbaihat.add(song);
             }
             if(intent.hasExtra("cacbaihat")){
