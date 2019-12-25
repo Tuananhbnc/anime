@@ -28,7 +28,7 @@ public class Fragment_Play_list_music_disc extends Fragment {
         view = inflater.inflate(R.layout.fragment_play_list_music_disc,container,false);
         circleImageView = view.findViewById(R.id.imageviewcicle);
         objectAnimator = ObjectAnimator.ofFloat(circleImageView,"rotation",0f,360f);
-        objectAnimator.setDuration(10000);
+        objectAnimator.setDuration(15000);
         objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
         objectAnimator.setRepeatMode(ValueAnimator.RESTART);
         objectAnimator.setInterpolator(new LinearInterpolator());
